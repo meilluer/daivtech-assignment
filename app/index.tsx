@@ -9,33 +9,8 @@ import {
 } from 'react-native';
 import CityCard from '../components/citycard';
 import { useBooking } from '../context/booking';
-const cities = [
-  {
-    id: '1',
-    name: 'Chennai',
-    region: 'South India',
-    image: require('../assets/images/chennai.jpg'),
-  },
-  {
-    id: '2',
-    name: 'Bangalore',
-    region: 'Silicon Valley',
-    image: require('../assets/images/banglore.jpg'),
-  },
-  {
-    id: '3',
-    name: 'Hyderabad',
-    region: 'Cyber Pearls',
-    image: require('../assets/images/hydrabad.jpg'),
-  },
-];
+import { cities, moreCities } from '../data/data';
 
-
-const moreCities = [
-  { id: '1', name: 'Jodhpur' },
-  { id: '2', name: 'Jaipur' },
-  { id: '3', name: 'Delhi NCR' },
-];
 
 export default function CitySelection() {
   const router = useRouter();

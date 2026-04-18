@@ -5,7 +5,7 @@ export const MOVIES = [
     rating: '4.9', 
     time: '2h 45m', 
     category: 'IMAX',
-    poster: require('./assets/images/Neon.jpg'),
+    poster: require('../assets/images/Neon.jpg'),
   },
 
   { id: '2', 
@@ -14,7 +14,7 @@ export const MOVIES = [
     rating: '4.7', 
     time: '1h 55m', 
     category: 'All',
-     poster: require('./assets/images/paris.webp'),
+     poster: require('../assets/images/paris.webp'),
    },
 
   { id: '3', 
@@ -23,12 +23,12 @@ export const MOVIES = [
     rating: '4.5', 
     time: '2h 10m', 
     category: 'Premiere',
-     poster: require('./assets/images/JODHPUR.jpg'),
+     poster: require('../assets/images/JODHPUR.jpg'),
    },
 ];
 
 
-const cities = [
+export const cities = [
   {
     id: '1',
     name: 'Chennai',
@@ -49,7 +49,7 @@ const cities = [
   },
 ];
 
-const moreCities = [
+export const moreCities = [
   { id: '1', name: 'Jodhpur' },
   { id: '2', name: 'Jaipur' },
   { id: '3', name: 'Delhi NCR' },
