@@ -1,6 +1,7 @@
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import MovieCard from '../components/moviecard';
 import { useBooking } from '../context/booking';
 import { MOVIES } from '../data/data';
 
@@ -23,7 +24,6 @@ export default function MovieListing() {
     <View style={styles.container}>
       <Text style={styles.title}>Now Showing</Text>
       
-      {}
       <View style={styles.tabContainer}>
         {['All', 'IMAX', 'Premiere', 'Indie'].map(tab => (
           <TouchableOpacity key={tab} onPress={() => setFilter(tab)}>
@@ -36,13 +36,7 @@ export default function MovieListing() {
         data={filteredMovies}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.card} onPress={() => handleMoviePress(item)}>
-            <View style={styles.posterPlaceholder} />
-            <View>
-              <Text style={styles.movieTitle}>{item.title}</Text>
-              <Text>{item.genre} • {item.rating}</Text>
-            </View>
-          </TouchableOpacity>
+          <MovieCard movie={item} onPress={() => handleMoviePress(item)} />
         )}
       />
     </View>
@@ -55,7 +49,4 @@ const styles = StyleSheet.create({
   tabContainer: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20 },
   tabText: { padding: 8, color: 'gray' },
   activeTab: { color: 'red', fontWeight: 'bold', borderBottomWidth: 2, borderBottomColor: 'red' },
-  card: { flexDirection: 'row', marginBottom: 15, backgroundColor: 'white', padding: 10, borderRadius: 10 },
-  posterPlaceholder: { width: 80, height: 100, backgroundColor: '#ddd', marginRight: 15, borderRadius: 8 },
-  movieTitle: { fontSize: 18, fontWeight: '600' }
 });

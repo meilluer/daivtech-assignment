@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useBooking } from '../context/booking';
 import { DATES, SHOWTIMES } from '../data/data';
 
@@ -18,6 +18,7 @@ export default function MovieDetails() {
 
   return (
     <ScrollView style={styles.container}>
+      <Image source={movie?.poster} style={styles.poster} />
       <Text style={styles.header}>{movie?.title || "Movie Details"}</Text>
       
       <Text style={styles.sectionTitle}>Select Date</Text>
@@ -55,7 +56,8 @@ export default function MovieDetails() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20 },
+  container: { flex: 1, padding: 20, backgroundColor: '#FFF5F5' },
+  poster: { width: '100%', height: 300, borderRadius: 15, marginBottom: 20 },
   header: { fontSize: 24, fontWeight: 'bold', marginVertical: 10 },
   sectionTitle: { fontSize: 16, marginVertical: 10, fontWeight: '500' },
   row: { flexDirection: 'row', justifyContent: 'space-around' },

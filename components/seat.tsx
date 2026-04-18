@@ -8,11 +8,11 @@ interface SeatProps {
 }
 
 const Seat = ({ id, status, onPress }: SeatProps) => {
-  // Determine color based on status
+  
   const getBackgroundColor = () => {
-    if (status === 'selected') return '#ff4444'; // Red
-    if (status === 'booked') return '#e0e0e0';   // Grey
-    return '#ffdada';                            // Light Pink
+    if (status === 'selected') return '#ff4444'; 
+    if (status === 'booked') return '#e0e0e0';   
+    return '#ffdada';                            
   };
 
   return (
