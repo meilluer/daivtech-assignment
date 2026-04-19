@@ -4,6 +4,7 @@ import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'rea
 import { useBooking } from '../context/booking';
 import { DATES, SHOWTIMES } from '../data/data';
 
+
 export default function MovieDetails() {
   const { movie, setBookingDetails } = useBooking();
   const [selectedDate, setSelectedDate] = useState('24');
@@ -16,6 +17,8 @@ export default function MovieDetails() {
     router.push('/selection');
   };
 
+
+
   return (
     <ScrollView style={styles.container}>
       <Image source={movie?.poster} style={styles.poster} />
@@ -27,6 +30,7 @@ export default function MovieDetails() {
           <TouchableOpacity 
             key={item.date} 
             style={[styles.dateBox, selectedDate === item.date && styles.selectedBox]}
+
             onPress={() => setSelectedDate(item.date)}
           >
             <Text>{item.day}</Text>
@@ -34,6 +38,7 @@ export default function MovieDetails() {
           </TouchableOpacity>
         ))}
       </View>
+      
 
       <Text style={styles.sectionTitle}>Available Showtimes</Text>
       <View style={styles.timeGrid}>

@@ -44,9 +44,9 @@ export default function MovieListing() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: '#FFF5F5' },
-  title: { fontSize: 22, fontWeight: 'bold', marginBottom: 15 },
-  tabContainer: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20 },
+  container: { flex: 1, padding: 20,   backgroundColor: '#FFF5F5' },
+  title: { fontSize: 22,fontWeight: 'bold', marginBottom: 15 },
+  tabContainer: { flexDirection: 'row',   justifyContent: 'space-between', marginBottom: 20 },
   tabText: { padding: 8, color: 'gray' },
-  activeTab: { color: 'red', fontWeight: 'bold', borderBottomWidth: 2, borderBottomColor: 'red' },
+  activeTab: { color: 'red',   fontWeight: 'bold', borderBottomWidth: 2, borderBottomColor: 'red' },
 });

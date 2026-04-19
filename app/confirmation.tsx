@@ -1,12 +1,13 @@
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import QRCode from 'react-native-qrcode-svg';
 import { useBooking } from '../context/booking';
 
 export default function Confirmation() {
   const { movie, bookingDetails, city } = useBooking();
   const router = useRouter();
-
+const bookingId = `CNM-${Math.floor(Math.random() * 100000)}`;
   return (
     <View style={styles.container}>
       <View style={styles.successCircle}>
@@ -21,12 +22,19 @@ export default function Confirmation() {
         <Text>Date: Friday, {bookingDetails.date} Oct</Text>
         <Text>Time: {bookingDetails.time}</Text>
         <Text>Seats: {bookingDetails.seats.join(', ')}</Text>
-        <Text style={styles.bookingId}>ID: #CNM-{Math.floor(Math.random() * 100000)}</Text>
+       <Text style={styles.bookingId}> ID: #{bookingId}
+       </Text>
       </View>
 
       <TouchableOpacity style={styles.homeBtn} onPress={() => router.replace('/')}>
         <Text style={{color: 'white'}}>Done</Text>
       </TouchableOpacity>
+      <View style={{ alignItems: 'center', marginTop: 20 }}>
+  <QRCode value={bookingId} size={140} />
+  <Text style={{ marginTop: 10, fontWeight: 'bold' }}>
+    Scan at entry
+  </Text>
+</View>
     </View>
   );
 }
