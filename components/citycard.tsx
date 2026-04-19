@@ -39,6 +39,7 @@ const CityCard = ({ name, region, image, onPress }: CityCardProps) => {
 
 const styles = StyleSheet.create({
   card: {
+     width: '100%',
     height: 120, 
     borderRadius: 20,
     marginVertical: 8,
@@ -46,6 +47,8 @@ const styles = StyleSheet.create({
   },
 
   image: {
+     width: '100%',
+     height: '100%',
     flex: 1, 
     justifyContent: 'center',
   },
